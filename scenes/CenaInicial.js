@@ -11,6 +11,7 @@ class CenaInicial extends Phaser.Scene {
     create() {
         this.add.image(567, 300, 'background').setScale(1.5);
         this.add.text(230, 200, 'Bem vindo ao meu jogo, Clique no botão para jogar', { fontSize: '24px', fill: '#FFFFFF' });
+        this.add.text(350, 450, 'Para ganhar, chegue ate a porta', { fontSize: '24px', fill: '#FFFFFF' });
 
         const play = this.add.sprite(567, 300, 'botaojogar',).setInteractive();
 
