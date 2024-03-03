@@ -1,7 +1,6 @@
 class CenaJogo extends Phaser.Scene {
     constructor(){
         super({ key: 'CenaJogo' });
-        const isso = this;
     }
     
     preload() {
@@ -12,7 +11,9 @@ class CenaJogo extends Phaser.Scene {
     }
 
     create() {
+        
         this.add.image(0, 0, 'floresta').setOrigin(0, 0).setScale(1)
+       
         // Defina as variáveis aqui como propriedades da classe
         this.platforms = this.physics.add.staticGroup();
         this.platforms.create(400, 400, 'plataforma').refreshBody();
@@ -48,6 +49,19 @@ class CenaJogo extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.physics.add.overlap(this.player, this.door, this.encostarNaPorta, null, this);
+        this.texto = this.add.text(300, 300, 'utilize as setas do teclado para se mover', { fontSize: '24px', fill: '#FFFFFF' });
+        this.time.delayedCall(4000, () => {
+            this.tweens.add({
+                targets: this.texto, // O texto que será animado
+                alpha: 0, // Destino da transparência (0 significa totalmente transparente)
+                duration: 1000, // Duração da animação em milissegundos
+                ease: 'Linear', // Tipo de easing (pode ser 'Linear', 'Quad.easeIn', etc.)
+                onComplete: function () {
+                    // Função de callback que é chamada quando a animação é concluída
+                    texto.destroy(); // Destroi o texto após o fade out
+                }
+            });
+        });
 
         
 
