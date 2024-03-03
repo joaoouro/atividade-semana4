@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <!-- Definição da codificação da página para que utilize caracteres UTF-8 em sua exibição-->
+        <meta charset="UTF-8">
+
+        <!-- Configura a visualização e dimensões da página de acordo com o dispositivo que está acessando-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Define o título da página que aparece na aba do navegador -->
+        <title>Nome</title>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+        </style>
+        
+        <!-- Importa o arquivo/script/framework Phaser.js para desenvolvimento de jogos através do CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+        
+    </head>
+
+<body>
+    <!-- Importa main.js como um módulo, seguido das cenas do jogo -->
+    <script type="module" src="main.js"></script>
+    <script src="scenes/CenaInicial.js"></script>
+    <script src="scenes/CenaJogo.js"></script>
+    <script src="scenes/CenaEndGame.js"></script>
+</body>
+
+</html>
