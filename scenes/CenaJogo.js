@@ -61,8 +61,8 @@ class CenaJogo extends Phaser.Scene { // Classe que representa a cena de jogo
                 alpha: 0,
                 duration: 1000,
                 ease: 'Linear',
-                onComplete: function () {
-                    texto.destroy(); // Destroi o texto após o fade out
+                onComplete: () => {
+                    this.texto.destroy(); // Destroi o texto após o fade out
                 }
             });
         });
@@ -70,7 +70,7 @@ class CenaJogo extends Phaser.Scene { // Classe que representa a cena de jogo
     
     // Função chamada quando o jogador encosta na porta
     encostarNaPorta(player, door) {
-        console.log('O jogador encostou na porta!');
+        console.log('encostou na porta');
         this.scene.start('CenaEndGame'); // Transição para a cena de fim de jogo
     }
     
